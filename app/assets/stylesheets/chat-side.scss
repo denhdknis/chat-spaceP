@@ -1,0 +1,55 @@
+  body{
+    background-color: #253141;
+      .layout-notification{
+      background-color: #253141;
+      float: left;
+      width: 300px
+      }
+
+    .chat{
+      &-side{
+      h5{
+        color: white;
+        float: left;
+        margin: 20px 20px 0 20px;
+          }
+        &-user-clearfix:after{
+          content: "";
+          clear: right;
+          display: block;
+          height: 25px;
+          }
+        .chat-side-user__tools{
+           .chat-side-user__tool{
+              i{
+                color: #FFFFFF;
+                float: right;
+                margin: 3px 5px 3px 5px;
+                  }
+                }
+              }
+            }
+          }
+        }
+
+
+  .chat-groups{
+          background:#2f3e51;
+          height: 50vw;
+  }
+  .chat-group{
+    margin: 60px 0 0 20px;
+    &_name{
+      padding: 20px 0 0 0;
+      margin: 20px 0 0 0;
+      color: #FFFFFF;
+      }
+      &_link{
+          text-decoration: none;
+      }
+          &_message{
+            margin: 5px 0 0 0;
+            color: #FFFFFF;
+            font-size: 14px;
+          }
+      }
