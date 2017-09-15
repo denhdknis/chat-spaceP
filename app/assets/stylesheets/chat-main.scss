@@ -2,7 +2,7 @@
       float: right;
       width: calc(100vw - 300px);
       &--left{
-          border: thin solid #eeeeee;
+          border: thin solid #eee;
           padding: 5px 0 2px 0;
           &__edit{
             float: right;
@@ -19,7 +19,7 @@
           }
       &__users{
           margin: 15px 0 0 40px;
-          color: #999999;
+          color: $white-gray;
           font-size:12px;
           }
         }
@@ -33,7 +33,7 @@
       margin: 46px 0 0 40px;
      &--time{
         font-size: 13px;
-        color: #999999;
+        color: $white-gray;
         &--messages{
             font-size: 14px;
             margin: 10px 0 0 40px;

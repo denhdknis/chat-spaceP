@@ -1,5 +1,4 @@
   body{
-    background-color: #253141;
       .layout-notification{
       background-color: #253141;
       float: left;
@@ -11,7 +10,7 @@
       h5{
         color: white;
         float: left;
-        margin: 20px 20px 0 20px;
+        margin: 20px 20px 0;
           }
         &-user-clearfix:after{
           content: "";
@@ -22,9 +21,9 @@
         .chat-side-user__tools{
            .chat-side-user__tool{
               i{
-                color: #FFFFFF;
+                color: $gray;
                 float: right;
-                margin: 3px 5px 3px 5px;
+                margin: 3px 5px ;
                   }
                 }
               }
@@ -40,16 +39,16 @@
   .chat-group{
     margin: 60px 0 0 20px;
     &_name{
-      padding: 20px 0 0 0;
-      margin: 20px 0 0 0;
-      color: #FFFFFF;
+      padding: 20px 0 0 ;
+      margin: 20px 0 0 ;
+      color: $gray;
       }
       &_link{
           text-decoration: none;
       }
           &_message{
-            margin: 5px 0 0 0;
-            color: #FFFFFF;
+            margin: 5px 0 0 ;
+            color: $gray;
             font-size: 14px;
           }
       }
