@@ -16,6 +16,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 #見た目系
 gem 'jquery-rails'
 gem 'turbolinks', '~> 5'
+gem 'font-awesome-rails'
 #haml適応
 gem 'haml-rails'
 gem 'erb2haml'
@@ -33,5 +34,4 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'erb2haml'
   gem 'test-unit'
-  gem 'font-awesome-rails'
 end

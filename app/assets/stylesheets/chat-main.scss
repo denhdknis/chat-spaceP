@@ -25,6 +25,15 @@
         }
       }
 
+  .chat-header--left__edit{
+            float: right;
+            margin: 20px 40px 0 0;
+            padding: 9px;
+            background-color: #38AEF0;
+            color: white;
+            text-decoration: none;
+    }
+
   .chat-body{
     height: calc(50vw - 141px);
     &__name{
@@ -43,6 +52,9 @@
      }
   }
 
+  .message_image{
+    background-color: red;
+  }
 
   .chat-footer{
     background-color: #AAAAAA;
@@ -55,6 +67,8 @@
     background-color: #38AEF0;
     border: solid 15px #38AEF0;
   }
+
+
   textarea {
     width: calc(100vw - 300px - 200px);
     height: 50px;

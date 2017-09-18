@@ -1,0 +1,18 @@
+.chat-side
+  .chat-side-user-clearfix
+    %h5 user-name
+  .chat-side-user__tools
+    %a.chat-side-user__tool{href:  ""}
+      %i.fa.fa-pencil-square-o
+    %a.chat-side-user__tool{href: "/users/edit"}
+      %i.fa.fa-cog
+  %ul.chat-groups
+    %li.chat-group
+      %a.chat-group_link{href: ""}
+        %p.chat-group_name group-name
+        %p.chat-group_message messages
+    %li.chat-group
+      %a.chat-group_link{href: "/users/edit"}
+        %p.chat-group_name group-name
+        %p.chat-group_message まだメッセージはありません。
+.chat-first-clearfix

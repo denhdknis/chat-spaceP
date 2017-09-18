@@ -4,12 +4,12 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false|
-|id|integer|null: false|
+|name|string|null: false,unique:true|
 
 ### Association
 - has_many :users, through: :members
 - has_many :members
+- has_many :messages
 
 
 ## usersテーブル
