@@ -2,17 +2,21 @@
   .chat-side-user-clearfix
     %h5 user-name
   .chat-side-user__tools
-    %a.chat-side-user__tool{href:  ""}
+    .chat-side-user__tool
+      = link_to "",  "user_registration"
       %i.fa.fa-pencil-square-o
-    %a.chat-side-user__tool{href: "/users/edit"}
+    .chat-side-user__tool
+      = link_to "" , "edit_user_registration"
       %i.fa.fa-cog
   %ul.chat-groups
     %li.chat-group
-      %a.chat-group_link{href: ""}
+      .chat-group_link
+        = link_to "" ,"user_registration"
         %p.chat-group_name group-name
         %p.chat-group_message messages
     %li.chat-group
-      %a.chat-group_link{href: "/users/edit"}
+      .chat-group_link
+        = link_to "" ,"edit_user_registration"
         %p.chat-group_name group-name
         %p.chat-group_message まだメッセージはありません。
 .chat-first-clearfix
