@@ -1,0 +1,27 @@
+%body
+  .layout-notification
+    .chat
+      = render  "common/chat-side"
+.chat-header
+  .chat-header-clearfix
+    .chat-header--left
+      = link_to "Edit" , "edit_user_registration" , class: "chat-header--left__edit"
+      %h2 title
+      %p.chat-header--left__users
+        Members: user-name
+        %span.chat-header--left__user menber-name
+    .chat-body
+      %p.chat-body__name
+      %span.chat-body__name SEO
+      %span.chat-body__name--time 2017/09/11 21:23
+      %p.chat-body__name--time--messages
+        Helloworld
+  .chat-footer
+    %form#new_message.new_message
+      %input{name: "utf8", type: "hidden", value: "✓"}/
+      %input{name: "authenticity_token", type: "hidden", value: "9+J+iEE5JnCNjkq122vb6vj/tpKt9Hhi1qtJ2mL34OiIePsUqy/zcka9p5kQBJz+1mUS8TVne4ffIaQ73DHo4g=="}/
+      .chat-footer__body
+        %textarea#message_body{name: "message[body]", placeholder: "type a message", row: "1"}
+        %label.chat-footer__file
+          %i.fa.fa-image
+        %input{"data-disable-with": "Send", name: "commit", type: "submit", value: "Send", class: "Send"}

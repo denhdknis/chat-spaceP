@@ -12,4 +12,16 @@ module ChatSpace
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
   end
+
+module PairsLike
+  class Application < Rails::Application
+    # ここから下を追加
+    config.generators do |g|
+      g.javascripts false
+      g.helper false
+      g.test_framework false
+    end
+  end
+end
+
 end

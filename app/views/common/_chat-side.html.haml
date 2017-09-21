@@ -1,0 +1,22 @@
+.chat-side
+  .chat-side-user-clearfix
+    %h5 user-name
+  .chat-side-user__tools
+    .chat-side-user__tool
+      = link_to "",  "#"
+      %i.fa.fa-pencil-square-o
+    .chat-side-user__tool
+      = link_to "" , "edit_user_registration"
+      %i.fa.fa-cog
+  %ul.chat-groups
+    %li.chat-group
+      .chat-group_link
+        = link_to "" ,"user_registration"
+        %p.chat-group_name group-name
+        %p.chat-group_message messages
+    %li.chat-group
+      .chat-group_link
+        = link_to "" ,"edit_user_registration"
+        %p.chat-group_name group-name
+        %p.chat-group_message まだメッセージはありません。
+.chat-first-clearfix
