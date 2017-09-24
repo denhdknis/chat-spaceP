@@ -1,13 +1,12 @@
 .chat-side
   .chat-side-user-clearfix
-    %h5 user-name
+  %user_name
+    = current_user.name
   .chat-side-user__tools
     .chat-side-user__tool
-      = link_to "",  "#"
-      %i.fa.fa-pencil-square-o
+      = link_to "",  "#" ,class: "fa fa-pencil-square-o"
     .chat-side-user__tool
-      = link_to "" , "edit_user_registration"
-      %i.fa.fa-cog
+      = link_to "" , "/users/edit", class: "fa fa-cog"
   %ul.chat-groups
     %li.chat-group
       .chat-group_link

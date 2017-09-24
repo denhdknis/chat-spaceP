@@ -7,10 +7,11 @@
 
     .chat{
       &-side{
-      h5{
+      user_name{
         color: white;
         float: left;
-        margin: 20px 20px 0;
+        font-size: 22px;
+        margin: 0 20px 0;
           }
         &-user-clearfix:after{
           content: "";
@@ -18,18 +19,21 @@
           display: block;
           height: 25px;
           }
-        .chat-side-user__tools{
-           .chat-side-user__tool{
-              i{
-                color: $gray;
-                float: right;
-                margin: 3px 5px ;
-                  }
-                }
-              }
-            }
-          }
         }
+      }
+    }
+      .fa.fa-cog{
+        color: $gray;
+        float: right;
+        margin: 3px 5px ;
+        text-decoration: none;
+      }
+      .fa.fa-pencil-square-o{
+        color: $gray;
+        float: right;
+        margin: 3px 5px ;
+        text-decoration: none;
+      }
 
 
   .chat-groups{
