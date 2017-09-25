@@ -6,4 +6,12 @@ class ApplicationController < ActionController::Base
       devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
       devise_parameter_sanitizer.permit(:account_update, keys: [:name])
     end
+
+    def after_sign_out_path_for(logout_user)
+      if logout_user == :admin_user
+        new_admin_user_session_path
+      else
+        new_user_session_path
+      end
+    end
 end

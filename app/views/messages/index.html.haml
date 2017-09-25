@@ -8,8 +8,9 @@
       = link_to "Edit" , "edit_user_registration" , class: "chat-header--left__edit"
       %h2 title
       %p.chat-header--left__users
-        Members: user-name
-        %span.chat-header--left__user menber-name
+        Members:
+        %user_name
+        = current_user.name
     .chat-body
       %p.chat-body__name
       %span.chat-body__name SEO
