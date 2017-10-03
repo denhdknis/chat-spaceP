@@ -1,0 +1,7 @@
+%li.chat-group
+  .chat-group_link
+  - @groups.each do |group|
+    = link_to "" ,"#"
+    %p.chat-group_name
+      = group.name
+    %p.chat-group_message messages
