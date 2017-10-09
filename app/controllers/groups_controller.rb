@@ -1,21 +1,36 @@
 class GroupsController < ApplicationController
 
+
+  def index
+    @groups = Group.where(id: current_user.id)
+  end
+
  def new
    @group = Group.new
  end
 
  def create
-   @group = Group.create(group_params)
+   @group = Group.new(group_params)
   if @group.save
-    flash[:notice] = "グループを作成しました"
-    redirect_to root_path
+    redirect_to root_path,  notice: "グループを作成しました"
   else
-    render action: :new
+    render :new,   notice: "グループ作成に失敗しました"
   end
  end
 
  def edit
+  @group = Group.find(params[:id])
  end
+
+ def update
+  group = Group.find(params[:id])
+      if group.id == current_user.id
+         group.update(group_params)
+        redirect_to root_path,  notice: "グループを更新しました"
+      else
+        render :edit,   notice: "グループ更新に失敗しました"
+      end
+  end
 
 
  private

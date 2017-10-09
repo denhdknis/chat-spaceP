@@ -1,5 +1,6 @@
 class MessagesController < ApplicationController
+
   def index
-    @groups = Group.all
+    @groups = Group.where(id: current_user.id)
   end
 end

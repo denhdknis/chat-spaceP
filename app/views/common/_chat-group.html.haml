@@ -1,7 +1,8 @@
 %li.chat-group
   .chat-group_link
+  / - binding.pry
   - @groups.each do |group|
-    = link_to "" ,"#"
     %p.chat-group_name
-      = group.name
+    = link_to  group.name , group_messages_path(:group) ,class: "chat-group_name"
     %p.chat-group_message messages
+    = link_to  "" , "#"
