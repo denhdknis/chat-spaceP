@@ -4,8 +4,7 @@ class UsersController < ApplicationController
 
   def update
     current_user.update(user_params)
-    if @user.save
-      redirect_to root_path,  notice: "ユーザーを更新しました"
+    if redirect_to root_path,  notice: "ユーザーを更新しました"
     else
       render :edit,   alert: "ユーザー更新に失敗しました"
     end
