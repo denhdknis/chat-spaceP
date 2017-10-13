@@ -14,7 +14,8 @@ class GroupsController < ApplicationController
   if @group.save
     redirect_to root_path,  notice: "グループを作成しました"
   else
-    render :new,   alert: "グループ作成に失敗しました"
+    flash.now[:alert] = "グループ作成に失敗しました"
+    render action: :new
   end
  end
 
@@ -25,10 +26,11 @@ class GroupsController < ApplicationController
  def update
   group = Group.find(params[:id])
   if group.id == current_user.id
-     group.update(group_params)
-     redirect_to root_path,  notice: "グループを更新しました"
+    group.update(group_params)
+    redirect_to root_path,  notice: "グループを更新しました"
   else
-       render :edit,   alret: "グループ更新に失敗しました"
+    flash.now[:alert] = "グループ作成に失敗しました"
+    render action: :edit
   end
  end
 

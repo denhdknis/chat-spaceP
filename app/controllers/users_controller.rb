@@ -3,10 +3,11 @@ class UsersController < ApplicationController
   end
 
   def update
-    current_user.update(user_params)
-    if redirect_to root_path,  notice: "ユーザーを更新しました"
+    if current_user.update(user_params)
+       redirect_to root_path,  notice: "ユーザーを更新しました"
     else
-      render :edit,   alert: "ユーザー更新に失敗しました"
+       flash.now[:alert] = "グループ作成に失敗しました"
+       render action: :edit
     end
   end
 
