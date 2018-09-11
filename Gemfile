@@ -35,4 +35,5 @@ group :development do
   gem 'erb2haml'
   gem 'test-unit'
   gem 'pry-rails'
+  gem 'carrierwave', '~> 1.2', '>= 1.2.3'
 end

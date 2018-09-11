@@ -1,8 +1,11 @@
 class MessagesController < ApplicationController
+ before_action :set_group
+
 
   def index
-    @messages = Message.new
-    @groups = Group.all#current_user.groups
+    @message = Message.new
+    @groups = Group.all
+    @messages = @group.messages
   end
 
   def new
@@ -10,8 +13,10 @@ class MessagesController < ApplicationController
   end
 
   def create
-    @messages = Message.create(body: message_params[:body], image: message_params[:image], user_id: current_user.id)
-  if @messages.save!
+  	#binding.pry
+  	@message = @group.messages.new(messages_params)
+    #binding.pry
+  if @message.save!
     redirect_to action: 'index',  notice: "メッセージを送信しました"
   else
     flash.now[:alert] = "メッセージ送信に失敗しました"
@@ -19,8 +24,12 @@ class MessagesController < ApplicationController
   end
   end
 
-
-  def message_params
-    params.require(:message).permit(:body,:image)
+  def set_group
+  	@group = Group.find(params[:group_id])
   end
+
+  def messages_params
+  	params.require(:message).permit(:body,:image).merge(user_id: current_user.id)
+  end
+
 end

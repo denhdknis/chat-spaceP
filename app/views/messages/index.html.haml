@@ -6,21 +6,26 @@
   .chat-header-clearfix
     .chat-header--left
       = link_to "Edit" , "edit" , class: "chat-header--left__edit"
-      %h2 title
+      %h2
+        = @group.name
       %p.chat-header--left__users
         Members:
         %user_name
         = current_user.name
+  - @messages.each do |message|
     .chat-body
       %p.chat-body__name
-      %span.chat-body__name SEO
-      %span.chat-body__name--time 2017/09/11 21:23
+      %span.chat-body__name
+        = message.user.name
+      %span.chat-body__name--time
+        = message.created_at
       %p.chat-body__name--time--messages
-        Helloworld
+        = message.body
+        = image_tag  message.image.url unless message.image.blank?
   .chat-footer
-    = form_for @messages, url: group_messages_path do |f|
+    = form_for [@group, @message], url: group_messages_path do |f|
       .chat-footer__body
         =f.text_area :body, class: "message_body" , size: "100x50"
-        = f.label :i, class: "fa fa-image"
-        =f.file_field :image, class: "fa fa-image"
-        = f.submit "Send" , class: 'Send'
+        = f.label :image , class: "fa fa-image"
+        = f.file_field :image, class: "fa fa-image", style: "display:none;"
+      = f.submit "Send" , class: 'Send'
