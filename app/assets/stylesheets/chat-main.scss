@@ -35,7 +35,7 @@
     }
 
   .chat-body{
-    height: calc(50vw - 141px);
+    height: calc(10vw);
     &__name{
       font-size: 16px;
       color: #434A54;
@@ -52,18 +52,30 @@
      }
   }
 
+  .message_body{
+    font-size: 20px;
+    margin: 0px auto;
+    vertical-align:middle;
+    height: 55px;
+    line-height: 55px;
+  }
+
   .message_image{
     background-color: red;
+    color: red;
   }
 
   .chat-footer{
+    position: fixed;            /* フッターの固定 */
+    bottom: 0px;                /* 位置(下0px) */  /* 位置(左0px) */
+    width: 80%;                /* 横幅100%*/         /* 縦幅140px */
     background-color: #AAAAAA;
-    padding: 20px 0 15px 20px;
+    padding: 20px 25px 25px 20px;
   }
 
   .Send{
     float: right;
-    margin: 0 40px 20px 0;
+    margin: -58px 65px 0 0px;
     background-color: $blue;
     border: solid 15px $blue;
   }
