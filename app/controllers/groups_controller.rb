@@ -24,9 +24,9 @@ class GroupsController < ApplicationController
  end
 
  def update
-  group = Group.find(params[:id])
-  if group.id == current_user.id
-    group.update(group_params)
+  @group = Group.find(params[:id])
+  if @group.id == current_user.id
+    @group.update(group_params)
     redirect_to root_path,  notice: "グループを更新しました"
   else
     flash.now[:alert] = "グループ作成に失敗しました"
