@@ -3,7 +3,7 @@
       width: calc(100vw - 300px);
       &--left{
           border: thin solid #eee;
-          padding: 5px 0 2px 0;
+          padding: 12px 0 2px 0;
           &__edit{
             float: right;
             margin: 20px 40px 0 0;
@@ -23,6 +23,11 @@
           font-size:12px;
           }
         }
+      }
+
+      .user_name{
+        color: $white-gray;
+        font-size:12px;
       }
 
   .chat-header--left__edit{
