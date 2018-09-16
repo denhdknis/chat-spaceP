@@ -1,5 +1,5 @@
 class GroupsController < ApplicationController
-
+ 
 
   def index
     @groups = Group.all#current_user.groups
@@ -11,7 +11,9 @@ class GroupsController < ApplicationController
 
  def create
    @group = Group.new(group_params)
+   #binding.pry
   if @group.save
+    @group.users << User.where(id: params[:group][:user_ids])
     redirect_to root_path,  notice: "グループを作成しました"
   else
     flash.now[:alert] = "グループ作成に失敗しました"
@@ -27,9 +29,10 @@ class GroupsController < ApplicationController
   @group = Group.find(params[:id])
   if @group.id == current_user.id
     @group.update(group_params)
+  @group.users << User.where(id: params[:group][:user_ids])
     redirect_to root_path,  notice: "グループを更新しました"
   else
-    flash.now[:alert] = "グループ作成に失敗しました"
+    flash.now[:alert] = "グループ編集に失敗しました"
     render action: :edit
   end
  end
@@ -39,5 +42,4 @@ class GroupsController < ApplicationController
    def group_params
       params.require(:group).permit(:name, :user_id)
    end
-
 end
