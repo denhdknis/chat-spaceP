@@ -8,10 +8,10 @@
       = link_to "Edit" , "edit" , class: "chat-header--left__edit"
       %h2
         = @group.name
-      %p.chat-header--left__users
-        Members:
-        %user_name
-        = current_user.name
+      %span.chat-header--left__users
+        Member :
+        -@group_users.each do |group_user|
+          = group_user.name
   - @messages.each do |message|
     .chat-body
       %p.chat-body__name

@@ -4,8 +4,12 @@ class MessagesController < ApplicationController
 
   def index
     @message = Message.new
-    @groups = Group.all
+    @groups = Group.where(params[:group_id])
     @messages = @group.messages
+    @group_users = @group.users
+    #binding.pry
+    #@group_userss = @group_users.user
+    #binding.pry
   end
 
   def new
