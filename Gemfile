@@ -36,4 +36,5 @@ group :development do
   gem 'test-unit'
   gem 'pry-rails'
   gem 'carrierwave', '~> 1.2', '>= 1.2.3'
+  gem 'mini_magick'
 end

@@ -32,17 +32,17 @@
     }
 
   .chat-body{
-    height: calc(10vw);
+    margin: 10px 0 0 40px;
     &__name{
       font-size: 16px;
       color: #434A54;
-      margin: 46px 0 0 40px;
+      margin: 46px 0 0 0;
      &--time{
         font-size: 13px;
         color: $white-gray;
         &--messages{
             font-size: 14px;
-            margin: 10px 0 0 40px;
+            margin: 10px 0 0 0;
             color: #435A54;
           }
         }
@@ -85,7 +85,7 @@
 
   @media (max-width: 1000px){
     .Send{
-      border: solid 165px $blue;
+      margin: -58px 150px 0 0px;
     }
   }
 

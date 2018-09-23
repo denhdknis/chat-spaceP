@@ -35,3 +35,8 @@ ja:
       header:
         one: ! '%{model}にエラーが発生しました。'
         other: ! '%{model}に%{count}個のエラーが発生しました。'
+  time:
+    formats:
+      default: ! '%Y/%m/%d'
+      long: ! '%Y/%m/%d %H時%M分'
+      short: ! '%Y年%m月%d日 %H:%M'
