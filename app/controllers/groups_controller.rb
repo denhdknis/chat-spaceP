@@ -1,5 +1,4 @@
 class GroupsController < ApplicationController
- 
 
   def index
     @groups = Group.all#current_user.groups
@@ -27,13 +26,12 @@ class GroupsController < ApplicationController
 
  def update
   @group = Group.find(params[:id])
-  if @group.id == current_user.id
-    @group.update(group_params)
-  @group.users << User.where(id: params[:group][:user_ids])
-    redirect_to root_path,  notice: "グループを更新しました"
+  if @group.update(group_params)
+      @group.users << User.where(id: params[:group][:user_ids])
+      redirect_to group_messages_path(@group), notice: 'グループを編集しました'
   else
-    flash.now[:alert] = "グループ編集に失敗しました"
-    render action: :edit
+      render :edit
+      flash.now[:alert] = "グループ編集に失敗しました"
   end
  end
 
