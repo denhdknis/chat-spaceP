@@ -12,17 +12,19 @@
           Member :
           -@group_users.each do |group_user|
             = group_user.name
-    - @messages.each do |message|
-      .chat-body
-        %p.chat-body__name
-        %span.chat-body__name
-          = message.user.name
-        %span.chat-body__name--time
-          = l(message.created_at, format: :long)
-        %p.chat-body__name--time--messages
-          = message.body
-        %p.chat-body_image
-          = image_tag  message.image.url unless message.image.blank?
+    .chat-header--left--clearfix
+      .chat-body-all
+        - @messages.each do |message|
+          .chat-body
+            %p.chat-body__name
+            %span.chat-body__name
+              = message.user.name
+            %span.chat-body__name--time
+              = message.created_at.to_s(:long)
+            %p.chat-body__name--time--messages
+              = message.body
+            %p.chat-body_image
+              = image_tag  message.image.url unless message.image.blank?
     .chat-footer
       = form_for [@group, @message], url: group_messages_path do |f|
         .chat-footer__body

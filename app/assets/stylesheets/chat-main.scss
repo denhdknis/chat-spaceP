@@ -4,6 +4,9 @@
       &--left{
           border: thin solid #eee;
           padding: 12px 0 2px 0;
+          position: fixed;
+          width: calc(100vw - 300px);
+          background-color: white;
           h2{
             color: #333;
             margin: 15px 0 0 40px;
@@ -22,6 +25,8 @@
         font-size:12px;
       }
 
+
+
   .chat-header--left__edit{
             float: right;
             margin: 20px 40px 0 0;
@@ -29,6 +34,19 @@
             background-color: $blue;
             color: white;
             text-decoration: none;
+    }
+
+  .chat-header--left--clearfix{
+    float: both;
+    display: block;
+    content:"こんにちは";
+    border: thin solid #eee;
+  }
+  .chat-body-all{
+    margin: 100px 0 100px 0;
+    padding: -100px 0 100px 0;
+    overflow: auto;
+    height: 42.9VW;
     }
 
   .chat-body{
