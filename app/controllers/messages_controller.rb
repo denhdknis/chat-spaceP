@@ -5,9 +5,9 @@ class MessagesController < ApplicationController
   def index
     @message = Message.new
     @groups = Group.where(params[:group_id])
-    @messages = @group.messages
+    @messages = @group.messages.includes(:user)
     @group_users = @group.users
-    #binding.pry
+    # binding.pry
   end
 
   def new
