@@ -12,8 +12,12 @@ class GroupsController < ApplicationController
    @group = Group.new(group_params)
    #binding.pry
   if @group.save
-    @group.users << User.where(id: params[:group][:user_ids])
-    redirect_to root_path,  notice: "グループを作成しました"
+    # @group.users << User.where(id: params[:group][:user_ids])
+    # redirect_to root_path,  notice: "グループを作成しました"
+    respond_to do |format|
+      format.html {redirect_to group_messages_path(@group), notice: 'グループを編集しました'}
+      format.json
+    end
   else
     flash.now[:alert] = "グループ作成に失敗しました"
     render action: :new
@@ -27,8 +31,12 @@ class GroupsController < ApplicationController
  def update
   @group = Group.find(params[:id])
   if @group.update(group_params)
-      @group.users << User.where(id: params[:group][:user_ids])
-      redirect_to group_messages_path(@group), notice: 'グループを編集しました'
+      # @group.users << User.where(id: params[:group][:user_ids])
+      # redirect_to group_messages_path(@group), notice: 'グループを編集しました'
+     respond_to do |format|
+      format.html {redirect_to group_messages_path(@group), notice: 'グループを編集しました'}
+      format.json
+     end
   else
       render :edit
       flash.now[:alert] = "グループ編集に失敗しました"
