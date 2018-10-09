@@ -5,7 +5,7 @@
   .chat-header
     .chat-header-clearfix
       .chat-header--left
-        = link_to "Edit" , "edit" , class: "chat-header--left__edit"
+        = link_to "Edit" , "edit" , class: "chat-header--left__edit",data: {"turbolinks" => false}
         %h2
           = @group.name
         %span.chat-header--left__users

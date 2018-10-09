@@ -2,7 +2,6 @@
   .chat-group_link
   - @groups.each do |group|
     %p.chat-group_name
-    = link_to  group.name , group_messages_path(group) ,class: "chat-group_name"
+    = link_to  group.name , group_messages_path(group) ,class: "chat-group_name" ,data: {"turbolinks" => false}
     %p.chat-group_message
-      = group.last_message
-      = link_to  "" , "#"
+    = link_to group.last_message , group_messages_path(group),class: "chat-group_name" ,data: {"turbolinks" => false}

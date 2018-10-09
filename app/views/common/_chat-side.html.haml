@@ -4,9 +4,9 @@
     = current_user.name
   .chat-side-user__tools
     .chat-side-user__tool
-      = link_to "",  new_group_path , class: "fa fa-pencil-square-o"
+      = link_to "",  new_group_path , class: "fa fa-pencil-square-o",data: {"turbolinks" => false}
     .chat-side-user__tool
-      = link_to "" , edit_user_registration_path, class: "fa fa-cog"
+      = link_to "" , edit_user_registration_path, class: "fa fa-cog",data: {"turbolinks" => false}
   %ul.chat-groups
     = render "common/chat-group"
 .chat-first-clearfix
