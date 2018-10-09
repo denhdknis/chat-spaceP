@@ -32,9 +32,14 @@
             float: right;
             margin: 20px 40px 0 0;
             padding: 9px;
-            background-color: $blue;
-            color: white;
+            height: 25px;
+            width: 60px;
+            text-align: center;
+            background-color: white;
+            border:solid 2px $blue;
+            color: $blue;
             text-decoration: none;
+            border-radius: 15px;
     }
 
   .chat-header--left--clearfix{
@@ -97,9 +102,15 @@
 
   .Send{
     float: right;
-    margin: -58px 60px 0 0px;
-    background-color: $blue;
-    border: solid 15px $blue;
+    height: 60px;
+    width: 80px;
+    margin: -58px 50px 0 0px;
+    text-align: center;
+    background-color: white;
+    border:solid 2px $blue;
+    color: $blue;
+    text-decoration: none;
+    border-radius: 15px;
   }
 
   @media (max-width: 1000px){
