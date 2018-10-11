@@ -1,4 +1,14 @@
 class UsersController < ApplicationController
+
+  def index
+     @users = User.where('name LIKE(?)' , "%#{params[:keyword]}%").where.not(id: current_user.id)
+     # binding.pry
+    respond_to do |format|
+      format.html
+      format.json
+    end
+  end
+
   def edit
   end
 
@@ -6,7 +16,7 @@ class UsersController < ApplicationController
     if current_user.update(user_params)
        redirect_to root_path,  notice: "ユーザーを更新しました"
     else
-       flash.now[:alert] = "グループ作成に失敗しました"
+       flash.now[:alert] = "ユーザー作成に失敗しました"
        render action: :edit
     end
   end
