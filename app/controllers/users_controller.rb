@@ -16,7 +16,7 @@ class UsersController < ApplicationController
     if current_user.update(user_params)
        redirect_to root_path,  notice: "ユーザーを更新しました"
     else
-       flash.now[:alert] = "グループ作成に失敗しました"
+       flash.now[:alert] = "ユーザー作成に失敗しました"
        render action: :edit
     end
   end

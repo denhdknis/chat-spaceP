@@ -30,16 +30,17 @@
 
   .chat-header--left__edit{
             float: right;
-            margin: 20px 40px 0 0;
+            margin: 15px 40px 0 0;
             padding: 9px;
             height: 25px;
             width: 60px;
             text-align: center;
             background-color: white;
-            border:solid 2px $blue;
+            border:solid 3px $blue;
             color: $blue;
             text-decoration: none;
             border-radius: 15px;
+            font-weight: bold;
     }
 
   .chat-header--left--clearfix{
@@ -107,10 +108,11 @@
     margin: -58px 50px 0 0px;
     text-align: center;
     background-color: white;
-    border:solid 2px $blue;
+    border:solid 4px $blue;
     color: $blue;
     text-decoration: none;
     border-radius: 15px;
+    font-weight: bold;
   }
 
   @media (max-width: 1000px){
