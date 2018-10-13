@@ -18,15 +18,15 @@ class MessagesController < ApplicationController
   	#binding.pry
   	@message = @group.messages.new(messages_params)
     #binding.pry
-  if @message.save!
-    respond_to do |format|
-     format.html {redirect_to action: 'index',  notice: "メッセージを送信しました"}
-     format.json
-    end
-  else
-    flash.now[:alert] = "メッセージ送信に失敗しました"
-    redirect_to action: 'index'
-  end
+   if @message.save!
+     respond_to do |format|
+      format.html {redirect_to action: 'index',  notice: "メッセージを送信しました"}
+      format.json
+     end
+   else
+     flash.now[:alert] = "メッセージ送信に失敗しました"
+     redirect_to action: 'index'
+   end
   end
 
   def set_group
