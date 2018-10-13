@@ -3,7 +3,7 @@ class Group < ApplicationRecord
   has_many :users, through: :members
   has_many :messages
 
-  validates :name, presence: true
+  validates :name, presence: true,length: { maximum: 32 }
 
 
   def last_message
